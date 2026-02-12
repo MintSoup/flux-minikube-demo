@@ -1,1 +1,0 @@
-# flux-minikube-demo
