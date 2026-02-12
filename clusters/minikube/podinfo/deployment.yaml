@@ -19,3 +19,25 @@ spec:
         ports:
         - containerPort: 9898
           name: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: podinfo-2
+  namespace: podinfo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: podinfo-2
+  template:
+    metadata:
+      labels:
+        app: podinfo-2
+    spec:
+      containers:
+      - name: podinfo
+        image: ghcr.io/stefanprodan/podinfo:6.5.4
+        ports:
+        - containerPort: 9898
+          name: http
